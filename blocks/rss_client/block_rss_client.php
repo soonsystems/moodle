@@ -100,6 +100,9 @@
             }
 
             foreach($rss_feeds as $feed){
+            	if(!empty($feed->skipuntil)){
+            		continue;
+            	}
                 $output.= $this->get_feed_html($feed, $maxentries, $showtitle);
             }
         }
